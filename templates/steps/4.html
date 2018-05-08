@@ -1,0 +1,98 @@
+{% extends 'base.html' %}{% load static %}
+
+{% block title %}4st step{% endblock %}
+
+{% block content %}
+<div class="col-lg-8 col-sm-10">
+  <div class="avatar" style="padding-top: 24px;">
+    <div class="media">
+        <img class="align-self-center mr-3" src="{% static 'img/ava.png' %}" alt="avatar">
+        <div class="media-body">
+          <h3 class="mt-0">Из чего складывается стоимость SMM</h3>
+          <h6 class="mb-0">Калькулятор Логиновской</h6>
+        </div>
+      </div>
+    </div>
+
+  <h4>Регионы</h4>
+
+  <div class="control-group">
+          <label class="control control-checkbox checkline">
+                  Москва
+                  <input type="checkbox" checked="checked" />
+              <div class="control_indicator"></div>
+          </label>
+          <label class="control control-checkbox checkline">
+                  Санкт-Петербург
+                  <input type="checkbox" />
+              <div class="control_indicator"></div>
+          </label>
+          <label class="control control-checkbox checkline">
+                  Другие регионы
+                  <input type="checkbox" />
+              <div class="control_indicator"></div>
+          </label>
+      </div>
+
+      <div class="media">
+          <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+          <div>
+            <p>Очевидно, что исполнитель из Москвы будет <br> стоить дороже сммщика из региона 😜</p>
+          </div>
+      </div>
+
+  <h4>Агенство или фрилансер</h4>
+
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="WorckerRadioOptions" id="WorckerRadioOptions1" value="option1">
+    <label class="form-check-label" for="WorckerRadioOptions1">Специалист</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="WorckerRadioOptions" id="WorckerRadioOptions2" value="option2">
+    <label class="form-check-label" for="WorckerRadioOptions2">Агентство</label>
+  </div>
+
+      <div class="media">
+          <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+          <div>
+            <p>Кому вы доверите свои социальные сети?</p>
+          </div>
+      </div>
+
+
+  <h4>Работа с блогерами</h4>
+
+  <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="Bloger2RadioOptions" id="Bloger2RadioOptions1" value="option1">
+      <label class="form-check-label" for="Bloger2RadioOptions1">1 человек</label>
+  </div>
+  <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="Bloger2RadioOptions" id="Bloger2RadioOptions2" value="option2">
+      <label class="form-check-label" for="Bloger2RadioOptions2">2 и больше человек</label>
+  </div>
+
+      <div class="media">
+          <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+          <div>
+              <p>Сколько человек будет курировать деятельность смм-специалиста с вашей стороны? Чем больше цепочка согласования, соответственно, выше оплата.</p>
+          </div>
+  </div>
+
+</div>
+<div class="col-lg-4">
+  <img class="text-nav" src="{% static 'img/text-3-1.svg' %}" alt="text">
+  <img src="{% static 'img/banner-2.png' %}" alt="banner-2">
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="fixed-bottom baseline">
+<div class="container" role="btns">
+        <div  class="justify-content-center text-center row ">
+            <button type="button" class="btn btn-outline-primary col-4">НАЗАД</button>
+            <img class="col-2 stepsStyle" src="{% static 'img/steps-4.svg' %}" alt="steps">
+            <button type="button" class="btn btn-outline-primary col-4">ВПЕРЕД</button>
+        </div>
+</div> <!-- /container -->
+</footer>
+{% endblock %}

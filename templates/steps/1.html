@@ -1,0 +1,139 @@
+{% extends 'base.html' %}{% load static %}
+
+{% block title %}1st step{% endblock %}
+
+{% block content %}
+<div class="col-lg-8 col-sm-10">
+  <div class="avatar" style="padding-top: 24px;">
+    <div class="media">
+      <img class="align-self-center mr-3" src="{% static 'img/ava.png' %}" alt="avatar">
+      <div class="media-body">
+        <h3 class="mt-0">Из чего складывается стоимость SMM</h3>
+        <h6 class="mb-0">Калькулятор Логиновской</h6>
+      </div>
+    </div>
+  </div>
+
+  <h4>Cоциальные сети</h4>
+
+  <!--Vkontakte-->
+  <a class="btn-floating btn-lg"> <img class="btn-vk" src="{% static 'img/vk.svg' %}" alt="vk"></a>
+  <!--Facebook-->
+  <a class="btn-floating btn-lg"> <img class="btn-fb" src="{% static 'img/facebook.svg' %}" alt="facebook"></a>
+  <!--Twitter-->
+  <a class="btn-floating btn-lg"> <img class="btn-tw" src="{% static 'img/twitter.svg' %}" alt="twitter"></a>
+  <!--Youtube-->
+  <a class="btn-floating btn-lg"> <img class="btn-yt" src="{% static 'img/youtube.svg' %}" alt="youtube"></a>
+  <!--Instagram-->
+  <a class="btn-floating btn-lg"> <img class="btn-ins" src="{% static 'img/instagram.svg' %}" alt="instagram"></a>
+  <!--Odnoklassniki-->
+  <a class="btn-floating btn-lg"><img class="btn-ok" src="{% static 'img/odnoklassniki.svg' %}" alt="odnoklassniki"></a>
+
+
+  <div class="media">
+      <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+      <div>
+        <p>В каких социальных сетях вы планируете вести активность?</p>
+      </div>
+  </div>
+
+  <h4>Мероприятия</h4>
+
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="EventRadioOptions" id="EventRadioOptions1" value="option1">
+    <label class="form-check-label" for="EventRadioOptions1">Нужны</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="EventRadioOptions" id="EventRadioOptions2" value="option2">
+    <label class="form-check-label" for="EventRadioOptions2">Не нужны</label>
+  </div>
+
+  <div class="media">
+      <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+      <div>
+        <p>Нужны ли различные стимулирующие мероприятия, которые будет делать смм-специалист: конкурсы, розыгрыши и т.д.?</p>
+      </div>
+  </div>
+
+
+  <h4>Периодичность</h4>
+
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="PeriodicityRadioOptions" id="PeriodicityRadioOptions1" value="option1">
+    <label class="form-check-label" for="PeriodicityRadioOptions1">Каждый день</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="PeriodicityRadioOptions" id="PeriodicityRadioOptions2" value="option2">
+    <label class="form-check-label" for="PeriodicityRadioOptions2">2 раза в день</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="PeriodicityRadioOptions" id="PeriodicityRadioOptions3" value="option2">
+    <label class="form-check-label" for="PeriodicityRadioOptions3">3-4 Раза в день</label>
+  </div>
+
+  <div class="media">
+      <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+      <div>
+        <p>Сложная тематика - та, которая требует глубокого погружения в продукт, например, медицинские услуги или финансовые продукты.</p>
+      </div>
+  </div>
+
+
+  <h4>Тематика</h4>
+
+  <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="ThemeicityRadioOptions" id="ThemeRadioOptions1" value="option1">
+      <label class="form-check-label" for="ThemeRadioOptions1">Сложная</label>
+  </div>
+  <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="ThemeicityRadioOptions" id="ThemeicityRadioOptions2" value="option2">
+      <label class="form-check-label" for="ThemeicityRadioOptions2">Простая</label>
+  </div>
+
+  <div class="media">
+      <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+      <div>
+          <p>Сложная тематика - та, которая требует глубокого погружения в продукт, например, медицинские услуги или финансовые продукты.</p>
+      </div>
+  </div>
+
+
+  <h4>Дизайн</h4>
+
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="DesignRadioOptions" id="DesignRadioOptions1" value="option1">
+    <label class="form-check-label" for="DesignRadioOptions1">Свои картинки</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="DesignRadioOptions" id="DesignRadioOptions2" value="option2">
+    <label class="form-check-label" for="DesignRadioOptions2">Покупать картинки</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="DesignRadioOptions" id="DesignRadioOptions3" value="option2">
+    <label class="form-check-label" for="DesignRadioOptions3">Обрабатывать картинки</label>
+  </div>
+
+  <div class="media">
+    <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+    <div>
+      <p>Сложная тематика - та, которая требует глубокого погружения в продукт, например, медицинские услуги или финансовые продукты.</p>
+    </div>
+  </div>
+</div>
+<div class="col-lg-4">
+  <img class="text-nav" src="{% static 'img/text.svg' %}" alt="text">
+  <img src="{% static 'img/banner-2.png' %}" alt="banner-2">
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="fixed-bottom baseline">
+  <div class="container" role="btns">
+    <div  class="justify-content-center text-center row ">
+      <button type="button" class="btn btn-outline-primary col-4">НАЗАД</button>
+      <img class="col-2 stepsStyle" src="{% static 'img/steps-1.svg' %}" alt="steps">
+      <button type="button" class="btn btn-outline-primary col-4">ВПЕРЕД</button>
+    </div>
+  </div> <!-- /container -->
+</footer>
+{% endblock %}

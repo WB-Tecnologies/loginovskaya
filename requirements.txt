@@ -4,6 +4,7 @@ gunicorn==19.7.1
 Pillow==4.2.1
 psycopg2==2.7.1
 django_compressor==2.1.1
+beautifulsoup4==4.6.0
 
 # Tests / linters
 django-rainbowtests==0.6.0

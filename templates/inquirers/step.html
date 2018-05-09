@@ -21,7 +21,7 @@
 <footer class="fixed-bottom baseline">
   <div class="container" role="btns">
     <div  class="justify-content-center text-center row ">
-      {% if not wizard.steps.first %}<button type="button" class="btn btn-outline-primary col-4">НАЗАД</button>{% endif %}
+      {% if wizard.steps.prev  %}<button type="button" class="c-step-previous btn btn-outline-primary col-4" data-url="{% url 'inquire-step' wizard.steps.prev %}">НАЗАД</button>{% endif %}
       <img class="col-2 stepsStyle" src="{% static 'img/steps-1.svg' %}" alt="steps">
       <button type="button" class="c-submit-form btn btn-outline-primary col-4">ВПЕРЕД</button>
     </div>

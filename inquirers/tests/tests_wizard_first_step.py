@@ -144,6 +144,11 @@ class WizardFirstStepTestCase(BaseTestCase):
                 self.assertEqual(len(design_checked), 1)
                 self.assertEqual(design_checked[0]['value'], value)
 
+    def test_missing_button_previous(self):
+        """ Check that missing button to previous step """
+        response = self.client.get(self.URL)
+        self.assertFalse(response.get_html().find(class_='c-step-previous'))
+
     def _get_field_name(self, name):
         return '{}-{}'.format(self.STEP, name)
 

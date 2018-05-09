@@ -12,6 +12,7 @@ class BeautifulClient(Client):
             response.get_html = lambda: BeautifulSoup(response.content, 'html.parser')
         except:
             response.get_html = lambda: None
+        response.get_content = lambda: response.content.decode('utf-8')
         return response
 
 

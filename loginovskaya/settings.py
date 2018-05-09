@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'migraph',
     'eraserhead.apps.EraserheadConfig',
     'debug_toolbar',
+    'formtools',
 
     'raven.contrib.django.raven_compat',
 

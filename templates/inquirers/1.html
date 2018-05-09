@@ -3,18 +3,9 @@
 {% with field=form.socials %}
 <h4>{{ field.label }}</h4>
 
-  <!--Vkontakte-->
-  <a class="btn-floating btn-lg"> <img class="btn-vk" src="{% static 'img/vk.svg' %}" alt="vk"></a>
-  <!--Facebook-->
-  <a class="btn-floating btn-lg"> <img class="btn-fb" src="{% static 'img/facebook.svg' %}" alt="facebook"></a>
-  <!--Twitter-->
-  <a class="btn-floating btn-lg"> <img class="btn-tw" src="{% static 'img/twitter.svg' %}" alt="twitter"></a>
-  <!--Youtube-->
-  <a class="btn-floating btn-lg"> <img class="btn-yt" src="{% static 'img/youtube.svg' %}" alt="youtube"></a>
-  <!--Instagram-->
-  <a class="btn-floating btn-lg"> <img class="btn-ins" src="{% static 'img/instagram.svg' %}" alt="instagram"></a>
-  <!--Odnoklassniki-->
-  <a class="btn-floating btn-lg"><img class="btn-ok" src="{% static 'img/odnoklassniki.svg' %}" alt="odnoklassniki"></a>
+  {% for value, label in field.field.choices %}
+  <a class="c-socials-link btn-floating btn-lg" href="#" data-value="{{ value }}"> <img class="btn-socials{% if value in field.value %} btn-active{% endif %}" src="{% with image_path='img/'|add:value|add:'.svg' %}{% static image_path %}{% endwith %}" alt="{{ label }}"></a>
+  {% endfor %}
 
   <div style="display: none">{{ field }}</div>
 

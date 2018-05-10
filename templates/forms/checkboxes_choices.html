@@ -1,0 +1,9 @@
+<div class="control-group">
+    {% for value, label in field.field.choices %}
+    <label class="control control-checkbox checkline">
+            {{ label }}
+            <input name="{% if prefix_name %}{{ prefix_name }}{% endif %}{{ field.name }}" type="checkbox" value="{{ value }}"{% if value in field.value %} checked{% endif %} />
+        <div class="control_indicator"></div>
+    </label>
+    {% endfor %}
+</div>

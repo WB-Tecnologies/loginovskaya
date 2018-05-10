@@ -22,7 +22,7 @@
   <div class="container" role="btns">
     <div  class="justify-content-center text-center row ">
       {% if wizard.steps.prev  %}<button type="button" class="c-step-previous btn btn-outline-primary col-4" data-url="{% url 'inquire-step' wizard.steps.prev %}">НАЗАД</button>{% endif %}
-      <img class="col-2 stepsStyle" src="{% static 'img/steps-1.svg' %}" alt="steps">
+      <img class="col-2 stepsStyle" src="{% with step_path='img/steps-'|add:wizard.steps.current|add:'.svg' %}{% static step_path %}{% endwith %}" alt="steps">
       <button type="button" class="c-submit-form btn btn-outline-primary col-4">ВПЕРЕД</button>
     </div>
   </div> <!-- /container -->

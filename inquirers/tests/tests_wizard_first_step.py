@@ -184,5 +184,11 @@ class WizardFirstStepTestCase(WizardStepTestCase):
         response = self.client.get(self.URL)
         self.assertFalse(response.get_html().find(class_='c-step-previous'))
 
+    def test_correct_display_steps_image(self):
+        """ Check that correct display steps image """
+        response = self.client.get(self.URL)
+        steps_image = response.get_html().find('img', class_='stepsStyle')
+        self.assertEqual(steps_image['src'], static('img/steps-{}.svg'.format(self.STEP)))
+
     def _get_base_post_data(self):
         return dict(socials=['facebook'], events='needed', periodicity='everyday', subjects='ordinary', design='self')

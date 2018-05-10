@@ -1,5 +1,6 @@
 VENV_PATH := $(HOME)/venv/bin
 PROJ_NAME := loginovskaya
+PROJ_PATH := $(HOME)/proj
 
 clean:
 	rm ./webroot/media/test -rf
@@ -30,7 +31,7 @@ test:
 	$(VENV_PATH)/python manage.py test -v 1 --noinput --parallel=8 || make clean
 
 cover_test:
-	$(VENV_PATH)/coverage run --source=$(PROJ_NAME) manage.py test -v 2 --noinput || (make clean && exit 1)
+	$(VENV_PATH)/coverage run --source=$(PROJ_PATH) manage.py test -v 2 --noinput || (make clean && exit 1)
 	make clean
 
 cover_report:

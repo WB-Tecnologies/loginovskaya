@@ -23,11 +23,11 @@ class WizardFourthStepTestCase(WizardStepTestCase):
         title = response.get_html().find('title')
         self.assertIn('{}st step'.format(self.STEP), title.get_text())
 
-    def test_redirect_to_third_step_url_after_post_valid_data(self):
-        """ Check redirect to third step url after post valid data """
+    def test_redirect_to_result_step_url_after_post_valid_data(self):
+        """ Check redirect to result step url after post valid data """
         response = self.client.post(self.URL, data=self._get_post_data())
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(response.url, reverse('inquire-result'))
+        self.assertEqual(response.url, reverse('inquire-step', kwargs=dict(step='result')))
 
     def test_exist_regions_field(self):
         """ Check that exist regions field with correct attributes """

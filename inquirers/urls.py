@@ -1,11 +1,11 @@
 from django.urls import path
 
-from inquirers.forms import FirstForm, SecondForm
+from inquirers.forms import FirstForm, SecondForm, ThirdForm
 from inquirers.views import InquireWizardView
 
 
 inquire_wizard = InquireWizardView.as_view(
-    [('1', FirstForm), ('2', SecondForm)], url_name='inquire-step', done_step_name='inquire-result')
+    [('1', FirstForm), ('2', SecondForm), ('3', ThirdForm)], url_name='inquire-step', done_step_name='inquire-result')
 
 
 urlpatterns = [

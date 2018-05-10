@@ -42,3 +42,19 @@ class SecondForm(forms.Form):
     monitoring = forms.ChoiceField(label='Мониторинг', widget=forms.RadioSelect, choices=MONITORING_CHOICES)
     matrix_answers = forms.ChoiceField(
         label='Матрица ответов', widget=forms.RadioSelect, choices=MATRIX_ANSWERS_CHOICES)
+
+
+class ThirdForm(forms.Form):
+
+    TUNING_CHOICES = (
+        ('targeting_fb+insta', 'Настройка таргетинга в ФБ+Инста'),
+        ('targeting_ok', 'Настройка таргетинга в ОК'),
+        ('third-party_sites', 'Размещение рекламных постов на сторонних площадках'),
+        ('targeting_vk', 'Настройка таргетинга в ВК'))
+    BUDGET_CHOICES = (('less100k', 'До 100 000'), ('more100k', 'Более 100 000'))
+    WORK_BLOGGERS_CHOICES = (('less5', 'До 5 в месяц'), ('more5', 'Более 5 в месяц'))
+    tuning = forms.MultipleChoiceField(
+        label='Настройка', widget=forms.CheckboxSelectMultiple, choices=TUNING_CHOICES)
+    budget = forms.ChoiceField(label='Бюджет', widget=forms.RadioSelect, choices=BUDGET_CHOICES)
+    work_bloggers = forms.ChoiceField(
+        label='Работа с блогерами', widget=forms.RadioSelect, choices=WORK_BLOGGERS_CHOICES)

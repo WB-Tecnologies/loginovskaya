@@ -57,6 +57,8 @@ INSTALLED_APPS = [
     'raven.contrib.django.raven_compat',
 
     # Custom apps
+    'helpers',
+    'inquirers',
 ]
 
 MIDDLEWARE = [

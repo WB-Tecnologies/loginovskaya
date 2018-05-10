@@ -30,3 +30,15 @@ class FirstForm(forms.Form):
     periodicity = forms.ChoiceField(label='Периодичность', widget=forms.RadioSelect, choices=PERIODICITY_CHOICES)
     subjects = forms.ChoiceField(label='Тематика', widget=forms.RadioSelect, choices=SUBJECTS_CHOICES)
     design = forms.ChoiceField(label='Дизайн', widget=forms.RadioSelect, choices=DESIGN_CHOICES)
+
+
+class SecondForm(forms.Form):
+
+    NEGOTIATION_CHOICES = (('yes', 'Да'), ('no', 'Нет'))
+    MONITORING_CHOICES = (('daily', 'Ежедневно'), ('weekly', 'Еженедельно'), ('monthly', 'Ежемесячно'))
+    MATRIX_ANSWERS_CHOICES = (('yes', 'Да'), ('no', 'Нет'))
+    negotiation = forms.ChoiceField(
+        label='Отработка негатива', widget=forms.RadioSelect, choices=NEGOTIATION_CHOICES)
+    monitoring = forms.ChoiceField(label='Мониторинг', widget=forms.RadioSelect, choices=MONITORING_CHOICES)
+    matrix_answers = forms.ChoiceField(
+        label='Матрица ответов', widget=forms.RadioSelect, choices=MATRIX_ANSWERS_CHOICES)

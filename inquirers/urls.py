@@ -4,9 +4,9 @@ from inquirers.forms import FirstForm, SecondForm, ThirdForm
 from inquirers.views import InquireWizardView
 
 
+named_inquire_forms = (('1', FirstForm), ('2', SecondForm), ('3', ThirdForm))
 inquire_wizard = InquireWizardView.as_view(
-    [('1', FirstForm), ('2', SecondForm), ('3', ThirdForm)], url_name='inquire-step', done_step_name='inquire-result')
-
+    form_list=named_inquire_forms, url_name='inquire-step', done_step_name='inquire-result')
 
 urlpatterns = [
     path('<step>', inquire_wizard, name='inquire-step'),

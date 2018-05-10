@@ -58,3 +58,14 @@ class ThirdForm(forms.Form):
     budget = forms.ChoiceField(label='Бюджет', widget=forms.RadioSelect, choices=BUDGET_CHOICES)
     work_bloggers = forms.ChoiceField(
         label='Работа с блогерами', widget=forms.RadioSelect, choices=WORK_BLOGGERS_CHOICES)
+
+
+class FourthForm(forms.Form):
+
+    REGIONS_CHOICES = (('moscow', 'Москва'), ('spb', 'Санкт-Петербург'), ('other', 'Другие регионы'))
+    EXECUTOR_CHOICES = (('less100k', 'До 100 000'), ('more100k', 'Более 100 000'))
+    AGREEMENT_CHAIN_CHOICES = (('one', '1 человек'), ('more2', '2 и более человек'))
+    regions = forms.MultipleChoiceField(label='Регионы', widget=forms.CheckboxSelectMultiple, choices=REGIONS_CHOICES)
+    executor = forms.ChoiceField(label='Агенство или фрилансер', widget=forms.RadioSelect, choices=EXECUTOR_CHOICES)
+    agreement_chain = forms.ChoiceField(
+        label='Цепочка согласования', widget=forms.RadioSelect, choices=AGREEMENT_CHAIN_CHOICES)

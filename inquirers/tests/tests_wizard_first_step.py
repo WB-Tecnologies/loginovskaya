@@ -1,16 +1,14 @@
 from django.templatetags.static import static
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse
 
-from helpers.base_test import BaseTestCase
+from helpers.base_test import WizardStepTestCase
 from inquirers.forms import FirstForm
 
 
-class WizardFirstStepTestCase(BaseTestCase):
+class WizardFirstStepTestCase(WizardStepTestCase):
 
     URL_NAME = 'inquire-step'
     STEP = 1
-    URL = reverse_lazy(URL_NAME, kwargs=dict(step=STEP))
-    MANAGEMENT_DATA = {'inquire_wizard_view-current_step': STEP}
 
     def test_resolve_url(self):
         """ Check that correct resolve url """
@@ -186,20 +184,5 @@ class WizardFirstStepTestCase(BaseTestCase):
             with self.subTest(value=value):
                 self.assertEqual(icons_active[i]['alt'], label)
 
-    def _get_field_name(self, name):
-        return '{}-{}'.format(self.STEP, name)
-
-    def _get_post_data(self, **kwargs):
-        base_post_data = {
-            'socials': ['facebook'], 'events': 'needed', 'periodicity': 'everyday', 'subjects': 'ordinary',
-            'design': 'self'}
-        post_data = {self._get_field_name(name): value for name, value in base_post_data.items()}
-        post_data.update(self.MANAGEMENT_DATA)
-        post_data.update(kwargs)
-        return post_data
-
-    def _get_only_data(self, **kwargs):
-        post_data = dict()
-        post_data.update(self.MANAGEMENT_DATA)
-        post_data.update(kwargs)
-        return post_data
+    def _get_base_post_data(self):
+        return dict(socials=['facebook'], events='needed', periodicity='everyday', subjects='ordinary', design='self')

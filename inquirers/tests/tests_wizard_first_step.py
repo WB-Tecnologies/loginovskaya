@@ -20,8 +20,8 @@ class WizardFirstStepTestCase(WizardStepTestCase):
         title = response.get_html().find('title')
         self.assertIn('{}st step'.format(self.STEP), title.get_text())
 
-    def test_redirect_to_second_step_url_after_post_valid_data(self):
-        """ Check redirect to second step url after post valid data """
+    def test_redirect_to_next_step_url_after_post_valid_data(self):
+        """ Check redirect to next step url after post valid data """
         response = self.client.post(self.URL, data=self._get_post_data())
         self.assertEqual(response.status_code, 302)
         self.assertEqual(response.url, reverse(self.URL_NAME, kwargs=dict(step=self.STEP+1)))

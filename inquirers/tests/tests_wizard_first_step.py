@@ -14,6 +14,12 @@ class WizardFirstStepTestCase(WizardStepTestCase):
         """ Check that correct resolve url """
         self.assertEqual(self.URL, '/inquire/1')
 
+    def test_title_contains_number_step(self):
+        """ Check that title contains '1st step' """
+        response = self.client.get(self.URL)
+        title = response.get_html().find('title')
+        self.assertIn('1st step', title.get_text())
+
     def test_redirect_to_second_step_url_after_post_valid_data(self):
         """ Check redirect to second step url after post valid data """
         response = self.client.post(self.URL, data=self._get_post_data())

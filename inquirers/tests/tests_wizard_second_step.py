@@ -8,13 +8,10 @@ from inquirers.forms import SecondForm
 class WizardSecondStepTestCase(WizardStepTestCase):
 
     STEP = 2
-    SESSION_PREFIX_KEY = 'wizard_inquire_wizard_view'
 
     def setUp(self):
         super().setUp()
-        session = self.client.session
-        session[self.SESSION_PREFIX_KEY] = dict(step=self.STEP, step_data={}, step_files={}, extra_data={})
-        session.save()
+        self._setup_session()
 
     def test_resolve_url(self):
         """ Check that correct resolve url """

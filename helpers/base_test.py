@@ -26,6 +26,7 @@ class WizardStepTestCase(BaseTestCase):
 
     URL_NAME = 'inquire-step'
     STEP = 1
+    SESSION_PREFIX_KEY = 'wizard_inquire_wizard_view'
 
     def setUp(self):
         super().setUp()
@@ -49,3 +50,8 @@ class WizardStepTestCase(BaseTestCase):
         post_data.update(self.MANAGEMENT_DATA)
         post_data.update(kwargs)
         return post_data
+
+    def _setup_session(self, step=None):
+        session = self.client.session
+        session[self.SESSION_PREFIX_KEY] = dict(step=(step or self.STEP), step_data={}, step_files={}, extra_data={})
+        session.save()

@@ -20,10 +20,10 @@ restart: stop start
 
 pep8:
 	$(VENV_PATH)/pycodestyle --exclude=*migrations*,*settings_local.py* \
-		--max-line-length=119 --show-source  $(PROJ_NAME)/
+		--max-line-length=119 --show-source  $(PROJ_PATH)
 
 pyflakes:
-	$(VENV_PATH)/pylama --skip=*migrations*,*settings_local.py*,*_tester.py -l pyflakes $(PROJ_NAME)/
+	$(VENV_PATH)/pylama --skip=*migrations*,*settings_local.py*,*_tester.py -l pyflakes $(PROJ_PATH)
 
 lint: pep8 pyflakes
 

@@ -45,7 +45,7 @@ non_covered:
 
 cover: cover_test cover_report
 
-ci_test: cover_test cover_report lint lint_frontend
+ci_test: cover_test cover_report lint
 
 wheel_install:
 	$(VENV_PATH)/pip install --no-index -f wheels/ -r requirements.txt
@@ -53,10 +53,6 @@ wheel_install:
 locale_search:
 	$(VENV_PATH)/python manage.py makemessages --all
 	$(VENV_PATH)/python manage.py compilemessages
-
-lint_frontend:
-	node client/node_modules/eslint/bin/eslint.js client/markup/components/**/*.js
-
 
 runcelery:
 	$(VENV_PATH)/celery -A $(PROJ_NAME) worker -l info -B -s ./var/celerybeat-schedule

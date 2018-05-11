@@ -1,0 +1,41 @@
+{% load static %}
+{{ form.errors }}
+{% with field=form.tuning %}
+<h4>{{ field.label }}</h4>
+
+{% include 'forms/checkboxes_choices.html' %}
+
+<div class="media">
+    <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+    <div>
+      <p>Нужны ли различные стимулирующие мероприятия, которые будет делать смм-специалист: конкурсы, розыгрыши и т.д.?</p>
+    </div>
+</div>
+{% endwith %}
+
+
+{% with field=form.budget %}
+<h4>{{ field.label }}</h4>
+
+{% include 'forms/radio_choices.html' %}
+
+<div class="media">
+    <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+    <div>
+      <p>Укажите бюджет, который вы готовы потратить на рекламу? Это чистый бюджет, на который будут откручиваться рекламные показы.</p>
+    </div>
+</div>
+{% endwith %}
+
+{% with field=form.work_bloggers %}
+<h4>{{ field.label }}</h4>
+
+{% include 'forms/radio_choices.html' %}
+
+<div class="media">
+    <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+    <div>
+        <p>Включает в себя подборку блогеров, договоренности с ними, проработка механики взаимодействия. Не включает в себя оплату размещений у блогеров.</p>
+    </div>
+</div>
+{% endwith %}

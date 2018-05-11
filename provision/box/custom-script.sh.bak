@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+set -eux
+
+# Locale settings
+export BOX_LOCALE="ru_RU"
+export BOX_ENCODING="UTF-8"
+
+echo "LC_ALL=$BOX_LOCALE.$BOX_ENCODING" >> environment.tmp
+echo "LANG=$BOX_LOCALE.$BOX_ENCODING" >> environment.tmp
+echo "LANGUAGE=$BOX_LOCALE.$BOX_ENCODING" >> environment.tmp
+sudo bash -c 'cat environment.tmp >> /etc/environment'
+rm environment.tmp
+
+sudo localedef $BOX_LOCALE.$BOX_ENCODING -i $BOX_LOCALE -f$BOX_ENCODING
+
+# Install common packages
+sudo apt-get -y update
+sudo apt-get -y install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev git unzip dirmngr vim htop
+
+# Install redis
+sudo apt-get -y install redis-server
+
+# Build fresh Python
+sudo apt-get -y install python-dev python-pip python-virtualenv build-essential libncurses5-dev libncursesw5-dev libreadline6-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libxml2-dev libxslt1-dev
+cd /tmp
+wget -O python.tgz https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tgz
+tar -xf python.tgz
+mv Python-3.6.2 python
+cd /tmp/python
+./configure --prefix=/usr/local/python-3.6.2
+make
+sudo make altinstall
+sudo rm /tmp/python -rf
+sudo rm /tmp/*.tgz -rf
+sudo ln -sf /usr/local/python-3.6.2/bin/* /usr/local/bin/
+
+# install nginx
+sudo apt-get -y --force-yes -q install nginx
+
+# install postgresql
+sudo apt-get -y install postgresql postgresql-server-dev-all postgresql-contrib python-psycopg2
+
+cd /tmp
+
+
+# install node.js
+until `wget https://deb.nodesource.com/setup_6.x`
+do
+    echo "repeat wget"
+done
+
+sudo bash setup_6.x
+
+sudo apt-get install -y nodejs
+sudo npm install -g npm@latest
+rm setup_6.x
+
+# install google-chrome
+sudo apt-get install -y libgconf2-4 libnss3
+wget https://dl.google.com/linux/direct/google-chrome-unstable_current_amd64.deb
+sudo dpkg -i google-chrome-unstable_current_amd64.deb || true
+sudo apt-get install -fy
+rm -rf google-chrome-*

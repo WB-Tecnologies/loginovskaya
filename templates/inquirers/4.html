@@ -1,0 +1,40 @@
+{% load static %}
+{{ form.errors }}
+{% with field=form.regions %}
+<h4>{{ field.label }}</h4>
+
+{% include 'forms/checkboxes_choices.html' %}
+
+<div class="media">
+    <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+    <div>
+      <p>Очевидно, что исполнитель из Москвы будет <br> стоить дороже сммщика из региона 😜</p>
+    </div>
+</div>
+{% endwith %}
+
+{% with field=form.executor %}
+<h4>{{ field.label }}</h4>
+
+{% include 'forms/radio_choices.html' %}
+
+<div class="media">
+    <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+    <div>
+      <p>Кому вы доверите свои социальные сети?</p>
+    </div>
+</div>
+{% endwith %}
+
+{% with field=form.agreement_chain %}
+<h4>{{ field.label }}</h4>
+
+{% include 'forms/radio_choices.html' %}
+
+<div class="media">
+    <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+    <div>
+        <p>Сколько человек будет курировать деятельность смм-специалиста с вашей стороны? Чем больше цепочка согласования, соответственно, выше оплата.</p>
+    </div>
+</div>
+{% endwith %}

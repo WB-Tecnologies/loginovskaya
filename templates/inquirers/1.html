@@ -1,0 +1,70 @@
+{% load static %}
+{{ form.errors }}
+{% with field=form.socials %}
+<h4>{{ field.label }}</h4>
+
+  {% for value, label in field.field.choices %}
+  <a class="c-socials-link btn-floating btn-lg" href="#" data-value="{{ value }}"> <img class="btn-socials{% if value in field.value %} btn-active{% endif %}" src="{% with image_path='img/'|add:value|add:'.svg' %}{% static image_path %}{% endwith %}" alt="{{ label }}"></a>
+  {% endfor %}
+
+  <div style="display: none">{{ field }}</div>
+
+  <div class="media">
+      <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+      <div>
+          <p>В каких социальных сетях вы планируете вести активность?</p>
+      </div>
+  </div>
+{% endwith %}
+
+{% with field=form.events %}
+  <h4>{{ field.label }}</h4>
+
+  {% include 'forms/radio_choices.html' %}
+
+  <div class="media">
+      <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+      <div>
+        <p>Нужны ли различные стимулирующие мероприятия, которые будет делать смм-специалист: конкурсы, розыгрыши и т.д.?</p>
+      </div>
+  </div>
+{% endwith %}
+
+{% with field=form.periodicity %}
+  <h4>{{ field.label }}</h4>
+
+  {% include 'forms/radio_choices.html' %}
+
+  <div class="media">
+      <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+      <div>
+        <p>Сложная тематика - та, которая требует глубокого погружения в продукт, например, медицинские услуги или финансовые продукты.</p>
+      </div>
+  </div>
+{% endwith %}
+
+{% with field=form.subjects %}
+  <h4>{{ field.label }}</h4>
+
+  {% include 'forms/radio_choices.html' %}
+
+  <div class="media">
+      <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+      <div>
+          <p>Сложная тематика - та, которая требует глубокого погружения в продукт, например, медицинские услуги или финансовые продукты.</p>
+      </div>
+  </div>
+{% endwith %}
+
+{% with field=form.design %}
+  <h4>{{ field.label }}</h4>
+
+  {% include 'forms/radio_choices.html' %}
+
+  <div class="media">
+    <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+    <div>
+      <p>Сложная тематика - та, которая требует глубокого погружения в продукт, например, медицинские услуги или финансовые продукты.</p>
+    </div>
+  </div>
+{% endwith %}

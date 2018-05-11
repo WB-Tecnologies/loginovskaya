@@ -1,0 +1,40 @@
+{% load static %}
+{{ form.errors }}
+{% with field=form.negotiation %}
+  <h4>{{ field.label }}</h4>
+
+  {% include 'forms/radio_choices.html' %}
+
+  <div class="media">
+      <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+      <div>
+        <p>Фактически техподдержка вашего проекта в соц.сетях. Вы осуществляете ее сами или вместо вас это делает смм-специалист?</p>
+      </div>
+  </div>
+{% endwith %}
+
+{% with field=form.monitoring %}
+  <h4>{{ field.label }}</h4>
+
+  {% include 'forms/radio_choices.html' %}
+
+  <div class="media">
+      <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+      <div>
+        <p>Нужно ли вам отслеживать упоминания о проекте? Как часто?</p>
+      </div>
+  </div>
+{% endwith %}
+
+{% with field=form.matrix_answers %}
+  <h4>{{ field.label }}</h4>
+
+  {% include 'forms/radio_choices.html' %}
+
+  <div class="media">
+      <img class="align-self-center mr-3" src="{% static 'img/ico-info.svg' %}" alt="info">
+      <div>
+          <p>Никто не застрахован от негативных отзывов. Будете ли вы реагировать на них сами или поручите сам-специалисту?</p>
+      </div>
+  </div>
+{% endwith %}

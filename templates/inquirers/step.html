@@ -1,0 +1,30 @@
+{% extends 'base.html' %}{% load static %}
+
+{% block title %}{{ wizard.steps.current }}st step{% endblock %}
+
+{% block extend_scripts %}<script src="{% static 'js/inquire.js' %}"></script>{% endblock %}
+
+{% block content %}
+<div class="col-lg-8 col-sm-10">
+  {% include 'inquirers/_avatar.html' %}
+<form id="inquire-form" method="post" action="">{% csrf_token %}{{ wizard.management_form }}
+  {% include form_template_name with form=wizard.form prefix_name=wizard.steps.current|add:'-' %}
+</form>
+</div>
+<div class="col-lg-4">
+  <img class="text-nav" src="{% static 'img/text.svg' %}" alt="text">
+  <img src="{% static 'img/banner-2.png' %}" alt="banner-2">
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="fixed-bottom baseline">
+  <div class="container" role="btns">
+    <div  class="justify-content-center text-center row ">
+      {% if wizard.steps.prev %}<button type="button" class="c-step-previous btn btn-outline-primary col-4" data-url="{% url 'inquire-step' wizard.steps.prev %}">НАЗАД</button>{% endif %}
+      <img class="col-2 stepsStyle" src="{% with step_path='img/steps-'|add:wizard.steps.current|add:'.svg' %}{% static step_path %}{% endwith %}" alt="steps">
+      <button type="button" class="c-submit-form btn btn-outline-primary col-4">ВПЕРЕД</button>
+    </div>
+  </div>
+</footer>
+{% endblock %}

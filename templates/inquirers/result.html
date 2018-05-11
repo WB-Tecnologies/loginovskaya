@@ -1,0 +1,35 @@
+{% extends 'base.html' %}{% load static humanize %}
+
+{% block title %}Final step{% endblock %}
+
+{% block extend_scripts %}<script src="{% static 'js/inquire.js' %}"></script>{% endblock %}
+
+{% block content %}
+<div class="col-lg-8 col-sm-10">
+  {% include 'inquirers/_avatar.html' %}
+
+  <h2 id="totalNumber">Итого: {{ total_cost|intcomma }} Р</h2>
+
+  <h4>Информация для точности:</h4>
+
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin.</p>
+
+</div>
+<div class="col-lg-4">
+  <img class="text-nav" src="{% static 'img/text.svg' %}" alt="text">
+  <img src="{% static 'img/banner-2.png' %}" alt="banner-2">
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="fixed-bottom baseline">
+  <div class="container" role="btns">
+    <div  class="justify-content-center text-center row ">
+{#      <button type="button" class="c-step-previous btn btn-outline-primary col-4" data-url="{% url 'inquire-step' '4' %}">НАЗАД</button>#}
+      <img class="col-2 stepsStyle" src="{% static 'img/steps-5.svg' %}" alt="steps">
+      <button type="button" id="lastBtn" class="btn btn-outline-primary col-4">ВПЕРЕД</button>
+    </div>
+  </div>
+</footer>
+{% endblock %}

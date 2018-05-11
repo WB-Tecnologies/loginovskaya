@@ -1,0 +1,22 @@
+---
+
+db_user: "loginovskaya_user"
+db_password: "Ob#eBm]R_!-k"
+db_name: "loginovskaya"
+http_host: "smm-price.ru"
+http_port: 80
+project_name: "loginovskaya"
+base_dir: "/home/loginovskaya"
+root_dir: "/home/loginovskaya/proj"
+client_dir: "/home/loginovskaya/proj/client"
+venv_path: "/home/loginovskaya/venv"
+django_username: "root"
+django_email: "root@example.org"
+django_password: "123123"
+local: false
+celery: true
+nginx_config_template: "nginx-host-prod.j2"
+gunicorn_config_template: "gunicorn-prod.j2"
+celery_config_template: "celery-prod.j2"
+locale: "en_US"
+encoding: "utf-8"

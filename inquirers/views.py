@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from formtools.wizard.views import NamedUrlSessionWizardView
 
+from inquirers.service import calc_choice_scores
+
 
 class InquireWizardView(NamedUrlSessionWizardView):
 
@@ -12,4 +14,5 @@ class InquireWizardView(NamedUrlSessionWizardView):
         return context
 
     def done(self, form_list, **kwargs):
-        return render(self.request, 'inquirers/result.html')
+        context = dict(total_cost=calc_choice_scores(*form_list))
+        return render(self.request, 'inquirers/result.html', context=context)

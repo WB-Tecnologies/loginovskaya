@@ -1,4 +1,4 @@
-{% extends 'base.html' %}{% load static %}
+{% extends 'base.html' %}{% load static humanize %}
 
 {% block title %}Final step{% endblock %}
 
@@ -8,7 +8,7 @@
 <div class="col-lg-8 col-sm-10">
   {% include 'inquirers/_avatar.html' %}
 
-  <h2 id="totalNumber">Итого: 45 000 Р</h2>
+  <h2 id="totalNumber">Итого: {{ total_cost|intcomma }} Р</h2>
 
   <h4>Информация для точности:</h4>
 

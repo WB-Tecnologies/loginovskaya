@@ -1,3 +1,5 @@
+from unittest.mock import patch
+
 from django.templatetags.static import static
 from django.urls import reverse_lazy
 
@@ -45,3 +47,20 @@ class WizardResultTestCase(WizardStepTestCase):
         response = self.client.get(self.URL)
         steps_image = response.get_html().find('img', class_='stepsStyle')
         self.assertEqual(steps_image['src'], static('img/steps-5.svg'))
+
+    @patch('inquirers.views.calc_choice_scores')
+    def test_display_total_cost_as_result_calc_choice_scores(self, mock_calc_choice_scores):
+        """ Check that display total cost as result calc_choice_scores function """
+        expected_cost = 18
+        mock_calc_choice_scores.return_value = expected_cost
+        response = self.client.get(self.URL)
+        total_number = response.get_html().find(id='totalNumber')
+        self.assertEqual(total_number.get_text(strip=True), 'Итого: {} Р'.format(expected_cost))
+
+    @patch('inquirers.views.calc_choice_scores')
+    def test_display_big_total_cost_with_thousand_separator(self, mock_calc_choice_scores):
+        """ Check that display big total cost with thousand separator """
+        mock_calc_choice_scores.return_value = 10200300
+        response = self.client.get(self.URL)
+        total_number = response.get_html().find(id='totalNumber')
+        self.assertIn('10 200 300', total_number.get_text())

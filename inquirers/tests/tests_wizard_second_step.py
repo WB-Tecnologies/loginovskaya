@@ -98,7 +98,7 @@ class WizardSecondStepTestCase(WizardStepTestCase):
         for value, _ in SecondForm.MATRIX_ANSWERS_CHOICES:
             with self.subTest(value=value):
                 response = self.client.post(self.URL, data=self._get_only_data(**{field_name: value}))
-                matrix_answers_radio = response.get_html().find_all(attrs=dict(name=self._get_field_name('matrix_answers')))
+                matrix_answers_radio = response.get_html().find_all(attrs=dict(name=field_name))
                 matrix_answers_checked = [radio for radio in matrix_answers_radio if radio.has_attr('checked')]
                 self.assertEqual(len(matrix_answers_checked), 1)
                 self.assertEqual(matrix_answers_checked[0]['value'], value)

@@ -30,5 +30,5 @@ class ChoiceScoreTestCase(TestCase):
         """ Check that form title property return title of form entity from field entity """
         form_entity = FormEntity.objects.create(title='Test form name')
         field_entity = FieldEntity.objects.create(form_entity=form_entity, label='Test field label')
-        choice_score= ChoiceScore.objects.create(field_entity=field_entity, name='Test choice store')
+        choice_score = ChoiceScore.objects.create(field_entity=field_entity, name='Test choice score')
         self.assertEqual(choice_score.form_title, form_entity.title)

@@ -3,6 +3,8 @@ from django.test import TestCase
 from django.test.client import Client
 from django.urls import reverse_lazy
 
+from inquirers.models import FormEntity, FieldEntity, ChoiceScore
+
 
 class BeautifulClient(Client):
 
@@ -11,7 +13,7 @@ class BeautifulClient(Client):
         response = super().request(**request)
         try:
             response.get_html = lambda: BeautifulSoup(response.content, 'html.parser')
-        except:
+        except Exception:
             response.get_html = lambda: None
         response.get_content = lambda: response.content.decode('utf-8')
         return response
@@ -20,6 +22,27 @@ class BeautifulClient(Client):
 class BaseTestCase(TestCase):
 
     client_class = BeautifulClient
+
+    def create_form_entity(self, form=None, **kwargs):
+        params = dict(title='Test form name', class_name='TestRadioForm')
+        if form is not None:
+            params['class_name'] = form.__class__.__name__
+        params.update(kwargs)
+        return FormEntity.objects.create(**params)
+
+    def create_field_entity(self, **kwargs):
+        params = dict(label='Test field label', name='test_field_name')
+        if 'form_entity' not in kwargs:
+            params['form_entity'] = self.create_form_entity()
+        params.update(kwargs)
+        return FieldEntity.objects.create(**params)
+
+    def create_choice_score(self, **kwargs):
+        params = dict(name='Test choice name', value='test-choice-value', cost=100)
+        if 'field_entity' not in kwargs:
+            params['field_entity'] = self.create_field_entity()
+        params.update(kwargs)
+        return ChoiceScore.objects.create(**params)
 
 
 class WizardStepTestCase(BaseTestCase):

@@ -54,7 +54,7 @@
 
 
 .lastBtn {
-    opacity: 30%;
+    opacity: 30;
 }
 
 
@@ -110,11 +110,6 @@
     transform: scale(1);
 }
 
-
-
-
-
-
 .control {
     display: block;
     position: relative;
@@ -139,7 +134,7 @@
     border: 0px solid #000000;
 }
 .control-radio .control_indicator {
-    border-radius: undefined%;
+    border-radius: 2%;
 }
 
 .control:hover input ~ .control_indicator,
@@ -152,7 +147,7 @@
 }
 .control:hover input:not([disabled]):checked ~ .control_indicator,
 .control input:checked:focus ~ .control_indicator {
-    background: #0e6647d;
+    background: #0e6647;
 }
 .control input:disabled ~ .control_indicator {
     background: #e6e6e6;
@@ -185,3 +180,27 @@
 
     padding-bottom: 12px;
 }
+
+#inquire-form h4 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#inquire-form .media {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.inquiry-end {
+    margin-bottom: 20px;
+}
+
+.help_text {
+    display: flex;
+    align-items: flex-start;
+}
+
+.step-title {
+    font-style: italic;
+}
+

@@ -43,6 +43,10 @@ $(document).ready(function(){
         }
     }
 
+    function number_with_thousand_separator(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
+
     function display_result() {
         var steps = ($.cookie(cookie_name) || {});
         var summary = 0;
@@ -52,7 +56,7 @@ $(document).ready(function(){
                 summary += Number(values[name]);
             }
         }
-        $inquire_result.text(summary);
+        $inquire_result.text(number_with_thousand_separator(summary));
     }
 
     function form_save() {

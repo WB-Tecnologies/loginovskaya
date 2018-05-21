@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./css/bootstrap-grid.css">
     <link rel="stylesheet" href="./css/bootstrap-reboot.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css?2">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Rubik');
     </style>
@@ -34,24 +34,28 @@
   </div>
   <div class="container maincontaineroption">
     <div class="row">
-      
+    
 <div class="col-lg-8 col-sm-10">
-  
+
 <div class="avatar" style="padding-top: 24px;">
   <div class="media">
     <img class="align-self-center mr-3" src="./img/ava.png" alt="avatar">
     <div class="media-body">
       <h3 class="mt-0">Из чего складывается стоимость SMM</h3>
       <h6 class="mb-0">Калькулятор Логиновской</h6>
+      <div class="step-title">Шаг 1.</div>
     </div>
   </div>
 </div>
 <form id="inquire-form" method="post" action="" data-step="1">
-  
 
-
-<h4>Социальные сети</h4>
-
+  <h4>Социальные сети</h4>
+  <div class="help_text">
+      <img class="align-self-center mr-3" src="./img/ico-info.svg" alt="info">
+      <div>
+          <p>В каких социальных сетях вы планируете вести активность?</p>
+      </div>
+  </div>
   
   <a class="c-socials-link btn-floating btn-lg" href="#" data-name="vkontakte"> <img class="btn-socials" src="./img/vkontakte.svg" alt="Vkontakte"></a>
   
@@ -92,19 +96,16 @@
 
 </li>
 </ul></div>
-
-  <div class="media">
-      <img class="align-self-center mr-3" src="./img/ico-info.svg" alt="info">
-      <div>
-          <p>В каких социальных сетях вы планируете вести активность?</p>
-      </div>
-  </div>
-
-
+  <div class="inquiry-end"></div>
 
   <h4>Мероприятия</h4>
 
-  
+  <div class="help_text">
+      <img class="align-self-center mr-3" src="./img/ico-info.svg" alt="info">
+      <div>
+        <p>Нужны ли различные стимулирующие мероприятия, которые будет делать смм-специалист: конкурсы, розыгрыши и т.д.?</p>
+      </div>
+  </div>
   <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="1-events" id="id_1-events_0" data-name="events-need" value="10000">
     <label class="form-check-label" for="id_1-events_0">Нужны</label>
@@ -114,20 +115,17 @@
     <input class="form-check-input" type="radio" name="1-events" id="id_1-events_1" data-name="events-notneed" value="0">
     <label class="form-check-label" for="id_1-events_1">Не нужны</label>
   </div>
+  <div class="inquiry-end"></div>
 
-
+  <h4>Периодичность</h4>
+  
   <div class="media">
       <img class="align-self-center mr-3" src="./img/ico-info.svg" alt="info">
       <div>
-        <p>Нужны ли различные стимулирующие мероприятия, которые будет делать смм-специалист: конкурсы, розыгрыши и т.д.?</p>
+        <p>Сложная тематика - та, которая требует глубокого погружения в продукт, например, медицинские услуги или финансовые продукты.</p>
       </div>
   </div>
 
-
-
-  <h4>Периодичность</h4>
-
-  
   <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="1-periodicity" id="id_1-periodicity_0" data-name="periodicity-everyday" value="10000">
     <label class="form-check-label" for="id_1-periodicity_0">Каждый день</label>
@@ -143,18 +141,16 @@
     <label class="form-check-label" for="id_1-periodicity_2">3-4 раза в день</label>
   </div>
 
+  <div class="inquiry-end"></div>
+
+  <h4>Тематика</h4>
 
   <div class="media">
       <img class="align-self-center mr-3" src="./img/ico-info.svg" alt="info">
       <div>
-        <p>Сложная тематика - та, которая требует глубокого погружения в продукт, например, медицинские услуги или финансовые продукты.</p>
+          <p>Сложная тематика - та, которая требует глубокого погружения в продукт, например, медицинские услуги или финансовые продукты.</p>
       </div>
   </div>
-
-
-
-  <h4>Тематика</h4>
-
   
   <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="1-subjects" id="id_1-subjects_0" data-name="subjects-difficult" value="15000">
@@ -166,18 +162,17 @@
     <label class="form-check-label" for="id_1-subjects_1">Простая</label>
   </div>
 
-
-  <div class="media">
-      <img class="align-self-center mr-3" src="./img/ico-info.svg" alt="info">
-      <div>
-          <p>Сложная тематика - та, которая требует глубокого погружения в продукт, например, медицинские услуги или финансовые продукты.</p>
-      </div>
-  </div>
-
+  <div class="inquiry-end"></div>
 
 
   <h4>Дизайн</h4>
 
+  <div class="media">
+    <img class="align-self-center mr-3" src="./img/ico-info.svg" alt="info">
+    <div>
+      <p>Сложная тематика - та, которая требует глубокого погружения в продукт, например, медицинские услуги или финансовые продукты.</p>
+    </div>
+  </div>
   
   <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="1-design" id="id_1-design_0" data-name="design-self" value="0">
@@ -193,14 +188,8 @@
     <input class="form-check-input" type="radio" name="1-design" id="id_1-design_2" data-name="design-prepare" value="7000">
     <label class="form-check-label" for="id_1-design_2">Обрабатывать картинки</label>
   </div>
-
-
-  <div class="media">
-    <img class="align-self-center mr-3" src="./img/ico-info.svg" alt="info">
-    <div>
-      <p>Сложная тематика - та, которая требует глубокого погружения в продукт, например, медицинские услуги или финансовые продукты.</p>
-    </div>
-  </div>
+  
+  <div class="inquiry-end"></div>
 
 </form>
 </div>

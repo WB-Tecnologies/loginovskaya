@@ -2,6 +2,10 @@ body {
     overflow-x: hidden;
 }
 
+.header {
+    text-align: center;
+}
+
 .text-nav {
     width: 560px;
     height: 140px;
@@ -189,18 +193,9 @@ body {
 }
 
 .media-body {
-    padding: 0;
+    padding-left: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+#totalNumber {
+    margin-top: 80px;
+}

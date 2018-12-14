@@ -209,3 +209,6 @@
     font-style: italic;
 }
 
+.media-body {
+    padding-left: 0;
+}

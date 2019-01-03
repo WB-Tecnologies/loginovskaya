@@ -1,4 +1,10 @@
+body {
+    overflow-x: hidden;
+}
 
+.header {
+    text-align: center;
+}
 
 .text-nav {
     width: 560px;
@@ -54,7 +60,7 @@
 
 
 .lastBtn {
-    opacity: 30;
+    opacity: 30%;
 }
 
 
@@ -72,7 +78,7 @@
     cursor: pointer;
     line-height: 20px;
     display: inline-block;
-    color: #212529;
+    color: #666;
 }
 [type="radio"]:checked + label:before,
 [type="radio"]:not(:checked) + label:before {
@@ -110,6 +116,11 @@
     transform: scale(1);
 }
 
+
+
+
+
+
 .control {
     display: block;
     position: relative;
@@ -134,7 +145,7 @@
     border: 0px solid #000000;
 }
 .control-radio .control_indicator {
-    border-radius: 2%;
+    border-radius: undefined%;
 }
 
 .control:hover input ~ .control_indicator,
@@ -147,7 +158,7 @@
 }
 .control:hover input:not([disabled]):checked ~ .control_indicator,
 .control input:checked:focus ~ .control_indicator {
-    background: #0e6647;
+    background: #0e6647d;
 }
 .control input:disabled ~ .control_indicator {
     background: #e6e6e6;
@@ -181,31 +192,10 @@
     padding-bottom: 12px;
 }
 
-#inquire-form h4 {
-    font-weight: normal;
-    margin-bottom: 0;
-    padding-bottom: 0;
+.media-body {
+    padding-left: 0;
 }
 
-#inquire-form .media {
-    padding-top: 0;
-    padding-bottom: 0;
+#totalNumber {
+    margin-top: 80px;
 }
-
-#inquire-form label.form-check-label, #inquire-form label.control-checkbox{
-    font-weight: 600;
-}
-
-.inquiry-end {
-    margin-bottom: 20px;
-}
-
-.help_text {
-    display: flex;
-    align-items: flex-start;
-}
-
-.step-title {
-    font-style: italic;
-}
-
